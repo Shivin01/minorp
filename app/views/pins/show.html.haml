@@ -21,8 +21,9 @@
 							=link_to like_tpin_path(@pin), method: :put, class: "btn btn-default" do
 								%span.gyphicon.glyphicon-heart
 									=@pin.get_upvotes.size
-							= link_to "Back", root_path, class: "btn btn-default"
+							-	if user_signed_in?
+									= link_to "Back", root_path, class: "btn btn-default"
 
-							= link_to "Edit", edit_pin_path, class: "btn btn-default"
+									= link_to "Edit", edit_pin_path, class: "btn btn-default"
 
-							= button_to "Delete", pin_path , method: :delete, data: { confirm: "Are you sure?"}, class: "btn btn-default"
+									= button_to "Delete", pin_path , method: :delete, data: { confirm: "Are you sure?"}, class: "btn btn-default"
