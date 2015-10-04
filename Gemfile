@@ -37,5 +37,6 @@ group :development do
   gem 'bootstrap-sass', '~> 3.2.0.2'
   gem 'paperclip', '~> 4.3.1'
   gem 'masonry-rails', '~> 0.2.4'
+  gem 'acts_as_votable', '~> 0.10.0'
 end
 
