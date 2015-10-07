@@ -15,4 +15,5 @@
 //= require bootstrap-sprockets
 //= require masonry/jquery.masonry
 //= require turbolinks
+//= require social-share-button
 //= require_tree .
