@@ -3,11 +3,21 @@ class PinsController < ApplicationController
 	before_action :authenticate_user!, except: [:index, :show]
 
 	def index
+		@search= Pin.search(params[:q])
+		@pins = @search.result
 		@pins = Pin.all.order("created_at DESC")
+		if params[:tag]
+			@pins = Pin.tagged_with(params[:tag])
+		else
+			@pins = Pin.all
+		end
+
 	end
 
 	def show
 		@cs = C.where(pin_id: @pin)
+		@search= Pin.search(params[:q])
+		@pins = @search.result
 	end
 
 	def new
@@ -22,6 +32,8 @@ class PinsController < ApplicationController
 		else
 			render 'new'
 		end
+
+
 	end
 
 	def edit
@@ -48,7 +60,7 @@ class PinsController < ApplicationController
 	private
 
 	def pin_params
-		params.require(:pin).permit(:title, :description, :image)
+		params.require(:pin).permit(:title, :description, :image, :user_id, :tag_list)
 	end
 
 	def find_pin

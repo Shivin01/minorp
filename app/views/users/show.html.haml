@@ -1,0 +1,10 @@
+= "User List"
+#users
+  - for user in @users
+    .user
+      %p
+        %strong
+          = user.email
+        = link_to "Add Friend",friends_path(:friend_id => user), :method => :post
+        
+       

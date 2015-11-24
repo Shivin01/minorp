@@ -1,8 +1,10 @@
-class UserMailer < ApplicationMailer
-	default from: "unplugnoreply@gmail.com"
+class UserMailer < ApplicationMailer::Base
+	default from: 'unplugnoreply@gmail.com'
 	def welcome_email(user)
-			@user = user
-			@url = 'https://whispering-wildwood-8183.herokuapp.com/'
-			mail(to: @user.email, subject: 'Welcome to Unplug')
-  	end
+		mail(to: user.email,
+			 from: "unplugnoreply@gmail.com",
+			 subjects: "Post created",
+			 body: "This is my first mailer",
+			 )
+	end
 end
