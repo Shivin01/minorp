@@ -56,7 +56,9 @@ class PinsController < ApplicationController
 		@pin.upvote_by current_user
 		redirect_to :back
 	end
-
+	def download_File
+		send_file image.attachment.path
+	end
 	private
 
 	def pin_params

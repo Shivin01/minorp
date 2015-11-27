@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   resources :pins do
   	resources :homes, only: [:show]
   	root to: "homes#show"
-
+    resources :download
   	resources :cs
 
   	member do
