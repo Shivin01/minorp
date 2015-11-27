@@ -3,7 +3,7 @@
 <% for friend in @current_user.friends %>
 	<li>
 		<%= friend.cfriend.email if friend.cfriend %>
-		(<%= link_to "remove", friend, :method => :delete %> )
+		<%= link_to "remove", friend, :method => :delete %> 
 		
 	</li>
 <% end %>
