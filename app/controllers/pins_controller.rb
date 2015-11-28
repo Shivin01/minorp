@@ -1,7 +1,7 @@
 class PinsController < ApplicationController
 	before_action :find_pin, only: [:show, :edit, :update, :destroy, :upvote, :downvote]
 	before_action :authenticate_user!, except: [:index, :show]
-
+	before_action :load_activities
 	def index
 		@search= Pin.search(params[:q])
 		@pins = @search.result
@@ -19,6 +19,10 @@ class PinsController < ApplicationController
 		@search= Pin.search(params[:q])
 		@pins = @search.result
 	end
+	def load_activities
+  		@activities = PublicActivity::Activity.order('created_at DESC').limit(20)
+	end
+	
 
 	def new
 		@pin = current_user.pins.build
@@ -32,8 +36,6 @@ class PinsController < ApplicationController
 		else
 			render 'new'
 		end
-
-
 	end
 
 	def edit
@@ -62,7 +64,7 @@ class PinsController < ApplicationController
 	private
 
 	def pin_params
-		params.require(:pin).permit(:title, :description, :image, :user_id, :tag_list)
+		params.require(:pin).permit(:title, :description, :image, :mp3, :user_id, :tag_list)
 	end
 
 	def find_pin

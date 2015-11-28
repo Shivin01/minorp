@@ -12,12 +12,12 @@ gem 'sass-rails', '~> 5.0'
 
 gem 'uglifier', '>= 1.3.0'
 gem 'social-share-button', '~> 0.1.6'
-gem "jquery-fileupload-rails"
+#gem "jquery-fileupload-rails"
 gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
-gem 'google-api-client', '~> 0.8.6'
-gem 'google-search', '~> 1.0.3'
-gem 'carrierwave', '~> 0.9'
+#gem 'google-api-client', '~> 0.8.6'
+#gem 'google-search', '~> 1.0.3'
+#gem 'carrierwave', '~> 0.9'
 
 
 gem 'turbolinks'
@@ -49,7 +49,7 @@ group :development do
   gem 'acts_as_votable', '~> 0.10.0'
   gem 'acts-as-taggable-on', '~> 3.5'
   gem 'ransack'
-  gem 'acts_as_follower', '~> 0.2.1'
+  #gem 'acts_as_follower', '~> 0.2.1'
   gem 'public_activity'
 end
 

@@ -8,6 +8,8 @@ class Pin < ActiveRecord::Base
 	has_attached_file :image, styles: { medium: "300*300>"}
 	validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
 	#attr_accessible :title, :description, :image, :tag_list
+	has_attached_file :mp3
+	validates_attachment_content_type :mp3, content_type: /.*/
 	acts_as_taggable
 
 end

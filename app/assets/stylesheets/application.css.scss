@@ -19,8 +19,10 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+html{height:100%;}
 body {
-    background: #E9E9E9;
+    background: #282828 ;
+    color: #480000  ;
 }
 
 h1, h2, h3, h4, h5, h6 {
