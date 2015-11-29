@@ -30,17 +30,6 @@ ActiveRecord::Schema.define(version: 20151128212342) do
   add_index "activities", ["recipient_id", "recipient_type"], name: "index_activities_on_recipient_id_and_recipient_type"
   add_index "activities", ["trackable_id", "trackable_type"], name: "index_activities_on_trackable_id_and_trackable_type"
 
-  create_table "comments", force: :cascade do |t|
-    t.text     "content"
-    t.integer  "post_id"
-    t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "comments", ["post_id"], name: "index_comments_on_post_id"
-  add_index "comments", ["user_id"], name: "index_comments_on_user_id"
-
   create_table "cs", force: :cascade do |t|
     t.text     "content"
     t.integer  "pin_id"
